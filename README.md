@@ -2,7 +2,8 @@
 Convert slides in PDF to video
 
 Author: Saurav Agarwal
-License: GPL3 license
+
+License: GPL v3.0 
 
 Requires: Linux system with `ffmpeg`, `imagemagick`, and `python3`
 
