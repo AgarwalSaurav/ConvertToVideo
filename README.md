@@ -9,6 +9,8 @@ Requires: Linux system with `ffmpeg`, `imagemagick`, and `python3`
 Command: `python3 slides2video.py sample_slides.pdf slides_timings sample_output.mp4`
 
 Input:    slide PDF file
-               video timings file
-               final video filename
+
+          video timings file
+              
+          final video filename
 
