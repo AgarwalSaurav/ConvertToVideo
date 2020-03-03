@@ -1,0 +1,5 @@
+temp/
+input/
+!input/sample_slides.pdf
+!input/sample_video.mp4
+!temp/sample_output.mp4
