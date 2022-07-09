@@ -1,7 +1,7 @@
 #!/bin/bash
 input_dir='./'
 tmp_dir=$(mktemp -d "${TMPDIR:-/tmp/}$(basename $0).XXXXXXXXXXXX")"/"
-convert_density=1200
+convert_density=1800
 video_res=1920x1080
 fps=30
 ffmpeg_quiet="ffmpeg -hide_banner -loglevel error -nostdin"
@@ -65,6 +65,7 @@ while IFS= read -r line;do
 			image_file_name="${tmp_image_dir}${base_file_name}.png"
 			video_file_name="${tmp_video_dir}${base_file_name}.mp4"
 			convert -density ${convert_density} "${file_name}[${fields[2]}]" "${image_file_name}"
+			mogrify -thumbnail ${video_res} -background black -gravity center -extent ${video_res} ${image_file_name}
 			GenerateVideo ${image_file_name} ${fields[3]} ${video_file_name}
 			printf "file \'${base_file_name}.mp4\'\n" >> ${video_list_filename}
 			;;
